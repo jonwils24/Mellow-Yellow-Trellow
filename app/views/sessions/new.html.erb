@@ -1,0 +1,19 @@
+<h1>Sign In</h1>
+
+<form action ="/session" method="post">
+  <%= authenticate %>
+  <label>Email<br>
+    <input type="text" 
+           name="user[email]" 
+           placeholder="guest@gmail.com" 
+           value="guest@gmail.com">
+  </label><br>
+  
+  <label>Password<br>
+    <input type="password"
+           name="user[password]"
+           placeholder="password"
+           value="password">
+  </label><br>
+  <input type="submit" value="Submit" class="btn btn-primary">
+</form>
