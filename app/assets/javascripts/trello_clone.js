@@ -12,3 +12,7 @@ window.TrelloClone = {
     Backbone.history.start();
   }
 };
+
+// $(document).ready(function(){
+//   TrelloClone.initialize();
+// });

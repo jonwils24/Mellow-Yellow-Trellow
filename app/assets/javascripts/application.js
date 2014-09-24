@@ -12,11 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
+//= require jquery-ui/sortable
 //= require underscore
 //= require backbone
 //= require bootstrap
-//= require turbolinks
 //= require trello_clone
 //= require_tree ../templates
 //= require_tree ./utils
