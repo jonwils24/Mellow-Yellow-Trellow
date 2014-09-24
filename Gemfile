@@ -10,15 +10,19 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+gem 'jquery-ui-rails'
 
 group :doc do
   gem 'sdoc', require: false
 end
 
 group :development do
+  gem 'annotate'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'byebug'
 end
 
 gem 'bcrypt', '~> 3.1.7'
