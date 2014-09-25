@@ -3,6 +3,10 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   
   className: 'clearfix',
   
+  events: {
+    'submit .list-form': 'createList'
+  },
+  
   initialize: function () {
     $('body').css('background-color', '#23719f');
     $('body').css('background-image', '');
@@ -21,6 +25,22 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
     this.addSubview("#lists", listShow);
   }, 
+  
+  createList: function(event) {
+    event.preventDefault();
+    var $form = $(event.target);
+    var data = $form.serializeJSON();
+    data.list.board_id = this.model.get('id');
+    this.collection.create(data.list, {
+      success: function() {
+        this.$('#listModal').removeData('modal').modal('hide');
+      },
+      wait: true
+    })
+    $('#listModal').on('hidden', function() {
+      $(this).data('modal', null);
+    });
+  },
   
   render: function () {
     var content = this.template({

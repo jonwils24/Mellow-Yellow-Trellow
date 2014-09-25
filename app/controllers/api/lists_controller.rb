@@ -1,17 +1,17 @@
 module Api
   class ListsController < ApiController
-    def index
-      @lists = current_board.lists
-      render json: @lists
-    end
-    
+    # def index
+    #   @lists = current_board.lists
+    #   render json: @lists
+    # end
+    #
     def show
-      @list = current_board.lists.find(params[:id])
+      @list = List.find(params[:id])
       render json: @list
     end
     
     def create
-      list = current_board.lists.new(list_params)
+      list = List.new(list_params)
             
       if list.save
         render json: list
@@ -21,7 +21,7 @@ module Api
     end
     
     def update
-      list = current_board.lists.find(params[:id])
+      list = List.find(params[:id])
       
       if list.update_attributes(list_params)
         render json: list
@@ -37,16 +37,6 @@ module Api
     end
     
     private
-    
-    def current_board
-      list = List.find(params[:id])
-      
-      if list
-        @board = list.board
-      else
-        @board = Board.find(params[:list][:board_id])
-      end
-    end
     
     def list_params
       params.require(:list).permit(:title, :board_id, :ord)
