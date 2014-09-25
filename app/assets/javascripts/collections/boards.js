@@ -1,4 +1,5 @@
 TrelloClone.Collections.Boards = Backbone.Collection.extend({
+  comparator: 'created_at',
   model: TrelloClone.Models.Board,
   url: 'api/boards',
   

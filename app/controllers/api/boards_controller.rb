@@ -1,5 +1,5 @@
 module Api
-  class BoardsController < ApplicationController
+  class BoardsController < ApiController
     def index
       @boards = current_user.boards
       render json: @boards
@@ -7,7 +7,7 @@ module Api
     
     def show
       @board = current_user.boards.find(params[:id])
-      render json: @board
+      render :show
     end
     
     def create

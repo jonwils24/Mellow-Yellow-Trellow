@@ -18,4 +18,7 @@ guest = User.create(email: 'guest@gmail.com', password: 'password')
 guestBoard1 = guest.boards.create(title: 'Final Project')
 guestBoard2 = guest.boards.create(title: 'Send Email')
 
+guestBoardList1 = guestBoard1.lists.create(title: 'New List')
+guestBoardList2 = guestBoard1.lists.create(title: 'Second List')
+
 
