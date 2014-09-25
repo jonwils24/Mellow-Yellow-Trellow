@@ -1,5 +1,9 @@
 <div class="containter">
+  <div id="navbar-bb"></div>
   <div id="content"></div>
 </div>
 
-<script>$(TrelloClone.initialize);</script>
+<script>$(TrelloClone.initialize({
+  $main: $('#content'),
+  $navbar: $('#navbar-bb')
+}));</script>

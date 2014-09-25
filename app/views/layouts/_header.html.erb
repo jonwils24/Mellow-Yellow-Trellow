@@ -12,43 +12,9 @@
     
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-    <% if signed_in? %>
-      <li>
-        <button class='navbar-btn btn btn-primary' data-toggle='modal'
-                data-target='#boardModal'><span class='glyphicon glyphicon-plus'></span></button>
-<!--button close tag not working -->
-        
-        <div class="modal fade" id="boardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Create Board</h4>
-              </div>
-              <div class="modal-body">
-                <form class="board-form">
-                  <label>
-                     Title
-                    <input type="text" name="board[title]">
-                  </label>
-                  <input type="submit" class="btn btn-primary">
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        
-      </li>
-      <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
-    <% else %>
+    
       <li><%= link_to "Sign in", new_session_url %></li>
       <li><%= link_to "Sign up", new_user_url %></li>
-    <% end %>
     </ul>
   </div>   
   </div>

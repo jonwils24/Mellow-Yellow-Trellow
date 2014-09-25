@@ -5,14 +5,12 @@ window.TrelloClone = {
   Routers: {},
   Utils: {},
   
-  initialize: function() {
+  initialize: function(options) {
     new TrelloClone.Routers.Router({
-      $rootEl: $("#content")
+      $rootEl: options.$main
     });
     Backbone.history.start();
+    
+    options.$navbar.html(new TrelloClone.Views.Navbar().render().$el);
   }
 };
-
-// $(document).ready(function(){
-//   TrelloClone.initialize();
-// });
