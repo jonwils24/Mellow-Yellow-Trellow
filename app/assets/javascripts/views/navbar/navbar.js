@@ -1,7 +1,10 @@
 TrelloClone.Views.Navbar = Backbone.View.extend({
   template: JST["navbar/navbar"],
   
-  events: {'submit .board-form': 'createBoard'},
+  events: {
+    'submit .board-form': 'createBoard'//,
+    // 'click .add-board': 'displayModal'
+  },
   
   createBoard: function(event){
     event.preventDefault();
@@ -10,12 +13,17 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
     TrelloClone.Collections.boards.create(data, {
       success: function(){ 
         this.$('#boardModal').modal('hide');
+        this.$('#boardModal').val('');
+        Backbone.history.navigate("", {trigger: true});
       },
-      error: function(){
-        alert('something went wrong :(');
-      }
+      wait: true
     })
   },
+  
+  // displayModal: function (event) {
+//     event.preventDefault();
+//     this.$('#boardModal').modal('show');
+//   },
   
   render: function(){
     this.$el.html(this.template());

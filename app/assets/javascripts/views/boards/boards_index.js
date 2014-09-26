@@ -8,16 +8,15 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   },
   
   initialize: function () {
+    $('body').css('background-color', 'transparent');
     this.listenTo(this.collection, 'sync', this.render);
   },
   
   create: function (event) {
-    console.log("creating a board");
     event.preventDefault();
     
     var params = $(event.currentTarget).serializeJSON();
     var newBoard = new TrelloClone.Models.Board(params['board']);
-    debugger
     newBoard.save({}, {
       success: function () {
         TrelloClone.Collections.boards.add(newBoard);

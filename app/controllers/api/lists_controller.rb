@@ -1,10 +1,5 @@
 module Api
   class ListsController < ApiController
-    # def index
-    #   @lists = current_board.lists
-    #   render json: @lists
-    # end
-    #
     def show
       @list = List.find(params[:id])
       render json: @list
@@ -33,7 +28,7 @@ module Api
     def destroy
       list = List.find(params[:id])
       list.destroy
-      render json: current_board
+      render json: {}
     end
     
     private

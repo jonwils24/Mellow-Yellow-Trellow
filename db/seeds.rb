@@ -21,4 +21,10 @@ guestBoard2 = guest.boards.create(title: 'Send Email')
 guestBoardList1 = guestBoard1.lists.create(title: 'New List')
 guestBoardList2 = guestBoard1.lists.create(title: 'Second List')
 
+guestBoardListCard1 = guestBoardList1.cards.create(title: 'New Card')
+guestBoardListCard2 = guestBoardList1.cards.create(title: 'Second Card')
+guestBoardListCard3 = guestBoardList1.cards.create(title: 'Third Card')
+guestBoardListCard4 = guestBoardList1.cards.create(title: 'Fourth Card')
+
+
 
