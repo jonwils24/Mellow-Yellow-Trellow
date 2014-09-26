@@ -5,7 +5,8 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   
   events: {
     'submit .card-form': 'createCard',
-    'click .card-modal': 'displayModal'
+    'click .card-modal': 'displayModal',
+    'sortstop': 'saveCardOrd'
   },
   
   initialize: function () {
@@ -27,11 +28,27 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.$('.cardModal').modal('show');
   },
   
+  saveCardOrd: function (event) {
+    event.stopPropagation();
+    var itemElements = this.$('.card-display');
+    var idAttribute = 'card-id';
+    var collection = this.collection;
+
+    itemElements.each(function(index, element) {
+      var $itemElement = $(element);
+      var itemId = $itemElement.data(idAttribute);
+      var item = collection.get(itemId);
+      
+      item.save({ord: index});
+    });
+  },
+  
   createCard: function(event) {
     event.preventDefault();
     var $form = $(event.target);
     var data = $form.serializeJSON();
     data.card.list_id = this.model.get('id');
+    data.card.ord = this.model.cards().length;
     this.collection.create(data.card, {
       success: function() {
         this.$('.cardModal').modal('hide'); 
@@ -39,8 +56,6 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       },
       wait: true
     })
-    // this.$('.cardModal').on('hidden.bs.modal', function (e) {
-    // });
   },
   
   render: function () {

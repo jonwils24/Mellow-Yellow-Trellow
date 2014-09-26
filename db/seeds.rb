@@ -19,12 +19,12 @@ guestBoard1 = guest.boards.create(title: 'Final Project')
 guestBoard2 = guest.boards.create(title: 'Send Email')
 
 guestBoardList1 = guestBoard1.lists.create(title: 'New List')
-guestBoardList2 = guestBoard1.lists.create(title: 'Second List')
+guestBoardList2 = guestBoard1.lists.create(title: 'Second List', ord: 1)
 
 guestBoardListCard1 = guestBoardList1.cards.create(title: 'New Card')
-guestBoardListCard2 = guestBoardList1.cards.create(title: 'Second Card')
-guestBoardListCard3 = guestBoardList1.cards.create(title: 'Third Card')
-guestBoardListCard4 = guestBoardList1.cards.create(title: 'Fourth Card')
+guestBoardListCard2 = guestBoardList1.cards.create(title: 'Second Card', ord: 1)
+guestBoardListCard3 = guestBoardList1.cards.create(title: 'Third Card', ord: 2)
+guestBoardListCard4 = guestBoardList1.cards.create(title: 'Fourth Card', ord: 3)
 
 
 

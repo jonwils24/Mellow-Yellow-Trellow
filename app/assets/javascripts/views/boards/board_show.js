@@ -4,7 +4,9 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   className: 'clearfix',
   
   events: {
-    'submit .list-form': 'createList'
+    'submit .list-form': 'createList',
+    'click .list-modal': 'displayModal',
+    'sortstop': 'saveListOrd'
   },
   
   initialize: function () {
@@ -15,8 +17,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addList);
     this.listenTo(this.collection, 'remove', this.removeList);
     
-    // this.collection.each(this.addList.bind(this));
-//     this.$('#lists').sortable();
+ 
   },
   
   addList: function (list) {
@@ -26,20 +27,38 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.addSubview("#lists", listShow);
   }, 
   
+  saveListOrd: function () {
+    var itemElements = this.$('.list-display');
+    var idAttribute = 'list-id';
+    var collection = this.collection;
+    
+    itemElements.each(function(index, element) {
+      var $itemElement = $(element);
+      var itemId = $itemElement.data(idAttribute);
+      var item = collection.get(itemId);
+      
+      item.save({ord: index});
+    });
+  },
+  
+  displayModal: function (event) {
+    event.preventDefault();
+    this.$('.listModal').modal('show');
+  },
+  
   createList: function(event) {
     event.preventDefault();
     var $form = $(event.target);
     var data = $form.serializeJSON();
     data.list.board_id = this.model.get('id');
+    data.list.ord = this.model.lists().length; //sets list ord
     this.collection.create(data.list, {
       success: function() {
-        this.$('#listModal').removeData('modal').modal('hide');
+        this.$('.listModal').modal('hide');
+        this.$('.listTitle').val('');
       },
       wait: true
     })
-    $('#listModal').on('hidden', function() {
-      $(this).data('modal', null);
-    });
   },
   
   render: function () {

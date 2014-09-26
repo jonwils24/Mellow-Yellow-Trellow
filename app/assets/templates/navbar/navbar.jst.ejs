@@ -13,10 +13,9 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <button class='navbar-btn btn btn-primary' data-toggle='modal'
-                data-target='#boardModal'><span class='glyphicon glyphicon-plus'></span></button>
+        <button class='navbar-btn btn btn-primary add-board' ><span class='glyphicon glyphicon-plus'></span></button>
         
-        <div class="modal fade" id="boardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade boardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -27,7 +26,7 @@
                 <form class="board-form">
                   <label>
                      Title
-                    <input type="text" name="board[title]">
+                    <input type="text" name="board[title]" class="boardTitle">
                   </label>
                   <input type="submit" class="btn btn-primary">
                 </form>
@@ -54,5 +53,8 @@
   </div>   
   </div>
 </nav>
+
+<!--data-toggle='modal'
+                data-target='#boardModal' -->
 
     
