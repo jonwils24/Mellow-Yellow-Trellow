@@ -232,3 +232,19 @@ ul {
   min-height: 19px;
   max-height: 100%;
 }
+
+li.card-display {
+  text-overflow: ellipsis;
+  overflow: ellipsis;
+  white-space: normal;
+}
+
+#cards .list-group-item {
+  text-overflow: ellipsis;
+  overflow: ellipsis;
+  width: 100%;
+}
+
+.panel-footer {
+  text-align: center;
+}
