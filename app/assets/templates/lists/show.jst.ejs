@@ -4,7 +4,7 @@
   
   <div class="panel-heading  list-heading " data-list-id="<%= list.id %>">
 
-    <button type="button" class="close clearfix" data-id="list-id"><span class="glyphicon glyphicon-list"></span></button>
+    <button type="button" class="close clearfix list-options" data-list-id="<%= list.id %>"><span class="glyphicon glyphicon-list"></span></button>
     
     <h4 class="panel-heading "><%= list.escape('title') %></h4>
     
@@ -17,10 +17,6 @@
 
 </div>
 </li>
-
-
-  
-  
   <div 
     class="modal fade cardModal"  
     tabindex="-1" 
@@ -49,3 +45,56 @@
       </div>
     </div>
   </div>
+  
+  
+  <div 
+    class="modal fade listOptionsModal"  
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="myModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Update List</h4>
+        </div>
+        <div class="modal-body">
+          <form class="list-update-form">
+            <label>
+               Edit Title
+              <input type="text" name="list[title]" class="listTitle" value="<%= list.get('title') %>">
+            </label>
+            <input type="submit" class="btn btn-primary">
+            
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger delete-list" data-toggle="confirmation">Delete List</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
