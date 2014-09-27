@@ -15,6 +15,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.collection = this.model.cards();
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'change:title', this.hideModal);
     this.listenTo(this.collection, 'add', this.addCard);
     this.listenTo(this.collection, 'remove', this.removeCard);
   },
@@ -32,16 +33,18 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var data = $form.serializeJSON();
     this.model.set({title: data.list.title});
     var that = this;
-    this.model.save({}, {
-      success: function() {
-        alert("saved");
-        that.$('.listOptionsModal').modal('hide');
-      },
-    });
+    this.model.save();
+  },
+  
+  hideModal: function() {
+    $('.listOptionsModal').modal('hide');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
   },
   
   testClick: function () {
-    alert("testing the click")
+    this.model.destroy();
+    this.hideModal();
   },
   
   displayModal: function (event) {
