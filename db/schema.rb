@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925205439) do
+ActiveRecord::Schema.define(version: 20140928215606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "board_memberships", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "board_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "board_memberships", ["user_id", "board_id"], name: "index_board_memberships_on_user_id_and_board_id", unique: true, using: :btree
 
   create_table "boards", force: true do |t|
     t.string   "title",      null: false
