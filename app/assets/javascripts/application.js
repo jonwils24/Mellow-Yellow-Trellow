@@ -17,6 +17,7 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require bootstrap-confirmation
 //= require backbone.TriggerHappy
 //= require trello_clone
 //= require_tree ../templates

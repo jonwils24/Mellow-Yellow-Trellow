@@ -1,5 +1,5 @@
 <div class='show-board-header'>
-  <h2><%= board.escape('title') %></h2>
+  <h1><%= board.escape('title') %></h1>
 </div>
 
 <div class='lists-window'>
@@ -16,21 +16,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h3 class="modal-title"><%= board.escape('title') %></h3>
+          <br>
           <h4 class="modal-title" id="myModalLabel">Create List</h4>
         </div>
         <div class="modal-body">
           <form class="list-form">
             <label>
                Title
+               </label><br>
               <input type="text" name="list[title]" class="listTitle">
-            </label>
-            <input type="submit" class="btn btn-primary">
+            <br><br>
+            <input type="submit" class="btn btn-custom">
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          
-        </div>
+        
       </div>
     </div>
   </div>

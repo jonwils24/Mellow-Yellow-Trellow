@@ -13,27 +13,24 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <button class='navbar-btn btn btn-primary add-board' ><span class='glyphicon glyphicon-plus'></span></button>
+        <button class='navbar-btn btn btn-custom-kilo add-board' ><span class='glyphicon glyphicon-plus'></span></button>
         
         <div class="modal fade boardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close x" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Create Board</h4>
               </div>
               <div class="modal-body">
                 <form class="board-form">
                   <label>
                      Title
+                   </label><br>
                     <input type="text" name="board[title]" class="boardTitle">
-                  </label>
-                  <input type="submit" class="btn btn-primary">
+                    <br><br>
+                  <input type="submit" class="btn btn-custom">
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                
               </div>
             </div>
           </div>
@@ -47,7 +44,7 @@
         <input 
           type="submit" 
           value="Sign out" 
-          class="btn btn-primary navbar-btn">
+          class="btn btn-custom-kilo navbar-btn">
       </form>
     </ul>
   </div>   

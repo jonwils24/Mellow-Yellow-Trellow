@@ -14,6 +14,8 @@
 
 
 guest = User.create(email: 'guest@gmail.com', password: 'password')
+member1 = User.create(email: 'member1@gmail.com', password: 'password')
+member2 = User.create(email: 'member2@gmail.com', password: 'password')
 
 guestBoard1 = guest.boards.create(title: 'Final Project')
 guestBoard2 = guest.boards.create(title: 'Send Email')
@@ -26,5 +28,7 @@ guestBoardListCard2 = guestBoardList1.cards.create(title: 'Second Card', ord: 1)
 guestBoardListCard3 = guestBoardList1.cards.create(title: 'Third Card', ord: 2)
 guestBoardListCard4 = guestBoardList1.cards.create(title: 'Fourth Card', ord: 3)
 
+# boardMember1 = guestBoard1.members.create(user_id: 2)
+# boardMember2 = guestBoard1.members.create(user_id: 3)
 
 

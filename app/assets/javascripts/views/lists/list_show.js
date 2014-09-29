@@ -9,15 +9,16 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     'click .card-modal': 'displayModal',
     'click .list-options': 'displayListOptions',
     'sortstop': 'saveCardOrd',
-    'click .delete-list': 'testClick'
+    'click .delete-list': 'deleteList'
   },
   
   initialize: function () {
     this.collection = this.model.cards();
-    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'change:title', this.hideModal);
     this.listenTo(this.collection, 'add', this.addCard);
     this.listenTo(this.collection, 'remove', this.removeCard);
+    this.listenTo(this.model.collection.board, 'sync', this.render);
+    this.model.cards().each(this.addCard.bind(this));
   },
   
   addCard: function (card) {
@@ -42,7 +43,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     $('.modal-backdrop').remove();
   },
   
-  testClick: function () {
+  deleteList: function () {
     this.model.destroy();
     this.hideModal();
   },
@@ -82,6 +83,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       success: function() {
         this.$('.cardModal').modal('hide'); 
         this.$('.cardTitle').val('');//does not work
+        this.$('.cardContent').val('');
       },
       wait: true
     })
@@ -89,24 +91,26 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   
   render: function () {
     var content = this.template({
-      list: this.model
+      list: this.model,
+      board: this.model.collection.board
     });
     
     this.$el.html(content);
-    this.$el.data('list-id', this.model.id);
-    this.renderCards();
-    
+    this.$el.attr('data-list-id', this.model.id);
+    this.attachSubviews();
+    this.sortableizeCards();
+    console.log('rendering list show')
+    window.v = this;
     return this;
   },
   
-  renderCards: function () {
-    this.model.cards().each(this.addCard.bind(this));
+  sortableizeCards: function(){
     this.$('#cards').sortable();
   },
   
   removeCard: function (card) {
-    var subview = _.find(this.subviews("#lists"),
-    function (subview) {
+    var subview = _.find(
+      this.subviews("#cards"), function (subview) {
       return subview.model === card;
     });
     

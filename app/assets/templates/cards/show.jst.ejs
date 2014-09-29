@@ -1,3 +1,39 @@
-<button type="button" class="close clearfix" data-id="list-id"><span class="glyphicon glyphicon-expand"></span></button>
+<button type="button" class="close clearfix card-show-modal" data-id="card-id"><span class="glyphicon glyphicon-expand"></span></button>
 <%= card.escape('title') %>
+
+
+
+  <div 
+    class="modal fade cardShowModal"  
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="myModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h3 class="modal-title"><%= list.escape('title') %></h3>
+          <br>
+          <h4 class="modal-title" id="myModalLabel">Card</h4>
+        </div>
+        <div class="modal-body">
+          <form class="card-show-form">
+            <label>Title</label>
+              <br>
+              <input type="text" name="card[title]" class="cardTitle" value="<%= card.get('title') %>">
+            <br><br>
+            <label>Description</label>
+            <br>
+              <textarea rows="10" class="form-control cardContent" name="card[content]" ><%= card.get('content') %></textarea>
+            <br>
+            <input type="submit" class="btn btn-custom">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-custom-danger delete-card">Delete Card</button>
+        </div>
+      </div>
+    </div>
+  </div>
 

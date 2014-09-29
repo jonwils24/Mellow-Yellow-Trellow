@@ -10,12 +10,11 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   },
   
   initialize: function () {
-    $('body').css('background-color', '#23719f');
-    $('body').css('background-image', '');
     this.collection = this.model.lists();
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addList);
     this.listenTo(this.collection, 'remove', this.removeList);
+    this.model.lists().each(this.addList.bind(this));
   },
   
   addList: function (list) {
@@ -24,10 +23,6 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
     this.addSubview("#lists", listShow);
   }, 
-  
-  // testClick: function () {
-//     alert("testing the click")
-//   },
   
   saveListOrd: function (event) {
     event.stopPropagation();
@@ -70,24 +65,30 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
     
     this.$el.html(content);
-    // this.attachSubviews();
-    this.renderLists();
-    
+    //this puts the lists back in the page
+    this.attachSubviews();
+    //we need to call $sortable on all of the lists' cards after
+    this.sortableizeLists();
+    this.$('#lists').sortable();
+    console.log('rendering board show')
     return this;
   },
   
-  renderLists: function () {
-    this.model.lists().each(this.addList.bind(this));
-    this.$('#lists').sortable();
+  sortableizeLists: function(){
+    var view = this;
+    _(this.subviews()).each(function (subviews, selector) {
+      _(subviews).each(function (subview) {
+        subview.sortableizeCards();
+      });
+    });
   },
   
   removeList: function (list) {
     var subview = _.find(
-      this.subviews("#lists"),
-      function (subview) {
+      this.subviews("#lists"), function (subview) {
         return subview.model === list;
-      });
-      
+      }
+    );
     this.removeSubview("#lists", subview);
-  }
+  }  
 });

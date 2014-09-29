@@ -12,7 +12,7 @@
   </ul>
 </div>
   <div class="panel-footer">
-    <button type="button" class="btn btn-custom btn-xs card-modal">Add Card</button>
+    <button type="button" class="btn btn-custom btn-sm card-modal">Add Card</button>
   </div>
 
 </div>
@@ -27,20 +27,22 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h3 class="modal-title"><%= list.escape('title') %></h3>
+          <br>
           <h4 class="modal-title" id="myModalLabel">Create Card</h4>
         </div>
         <div class="modal-body">
           <form class="card-form">
-            <label>
-               Title
+            <label>Title</label>
+              <br>
               <input type="text" name="card[title]" class="cardTitle">
-            </label>
-            <input type="submit" class="btn btn-primary">
+            <br><br>
+            <label>Description</label>
+            <br>
+              <textarea rows="10" class="form-control cardContent" name="card[content]" ></textarea>
+            <br>
+            <input type="submit" class="btn btn-custom">
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          
         </div>
       </div>
     </div>
@@ -57,21 +59,24 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h3 class="modal-title"><%= board.escape('title') %></h3>
+          <br>
           <h4 class="modal-title" id="myModalLabel">Update List</h4>
         </div>
         <div class="modal-body">
           <form class="list-update-form">
             <label>
-               Edit Title
+              Title
+               </label><br>
               <input type="text" name="list[title]" class="listTitle" value="<%= list.get('title') %>">
-            </label>
-            <input type="submit" class="btn btn-primary">
+            <br><br>
+            <input type="submit" class="btn btn-custom">
             
           </form>
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger delete-list" data-toggle="confirmation">Delete List</button>
+          <button type="button" class="btn btn-custom-danger delete-list">Delete List</button>
           
         </div>
       </div>
