@@ -4,7 +4,7 @@
   
   <div class="panel-heading  list-heading " data-list-id="<%= list.id %>">
 
-    <button type="button" class="close clearfix list-options" data-list-id="<%= list.id %>"><span class="glyphicon glyphicon-list"></span></button>
+    <button type="button" class="close clearfix list-options" data-list-id="<%= list.id %>"><i class="fa fa-list"></i></button>
     
     <h4 class="panel-heading "><%= list.escape('title') %></h4>
     
@@ -12,7 +12,7 @@
   </ul>
 </div>
   <div class="panel-footer">
-    <button type="button" class="btn btn-custom btn-sm card-modal">Add Card</button>
+    <button type="button" class="btn btn-custom btn-sm card-modal add-card">Add Card</button>
   </div>
 
 </div>
@@ -26,7 +26,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
           <h3 class="modal-title"><%= list.escape('title') %></h3>
           <br>
           <h4 class="modal-title" id="myModalLabel">Create Card</h4>
@@ -58,7 +58,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
           <h3 class="modal-title"><%= board.escape('title') %></h3>
           <br>
           <h4 class="modal-title" id="myModalLabel">Update List</h4>

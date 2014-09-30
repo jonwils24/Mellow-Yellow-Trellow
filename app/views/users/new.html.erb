@@ -1,20 +1,26 @@
 <%= render partial: "layouts/header" %>
-<h1>Sign Up</h1>
 
 <%= render "layouts/errors" %>
 
-<form action ="/users" method="post">
-  <%= authenticate %>
-  <label>Email<br>
-    <input type="text" 
-           name="user[email]" 
-           placeholder="Enter Email">
-  </label><br>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 landing">
+  <h1>Sign Up</h1>
+    <form action ="/users" method="post" class="margin-base-vertical">
+      <%= authenticate %>
+      <label>Email<br>
+        <input type="text" 
+               name="user[email]" 
+               placeholder="Enter Email">
+      </label><br><br>
   
-  <label>Password<br>
-    <input type="password"
-           name="user[password]"
-           placeholder="Enter Email">
-  </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary">
-</form>
+      <label>Password<br>
+        <input type="password"
+               name="user[password]"
+               placeholder="Enter Email">
+      </label><br><br>
+      <input type="submit" value="Submit" class="btn btn-custom-india-home">
+    </form>
+  </div>
+</div>
+
