@@ -23,7 +23,7 @@
 }
 
 .fa-cog {
-  color: white;
+  color: ghostwhite;
 }
 
 .list-group-item {
@@ -144,7 +144,8 @@ body {
 .white-panel {
   width: 97%;
 //  min-height: 95%;
-  height: 700px;
+//  height: 700px;
+  height: 97%;
   overflow-y: scroll;
   overflow-x: scroll;
   margin: 20px;
@@ -261,7 +262,6 @@ body {
   font-size: 20px;
 }
 
-//
 .cardShowModal .modal-content{
   background-color: rgba(0, 0, 0, 0.8);
   border: solid;
@@ -282,6 +282,36 @@ body {
   text-align: center;
 }
 
+//
+.memberEmail {
+  width: 100%;
+  color: black;
+  border-radius: 3px;
+  border: thin black;
+  font-size: 20px;
+}
+
+.memberModal .modal-content{
+  background-color: rgba(0, 0, 0, 0.8);
+  border: solid;
+  border-color: white;
+  margin-top: 25px;
+  width: 300px;
+  position: fixed;
+  left: 25%;
+}
+
+.memberModal .modal-content .modal-title{
+  color: white;
+  text-align: center;
+}
+
+.memberModal .modal-content .modal-body{
+  color: white;
+  text-align: center;
+}
+//
+
 textarea {
   height: auto;
 }
@@ -295,15 +325,17 @@ textarea {
   margin-bottom: 0px;
   font-size: 12px;
   color: #23719f;
+  border-radius: 0px;
 }
 
 .panel {
   margin-bottom: 0px;
   border-color: dimgrey;
+  border-width: 2px;
 }
 
 .panel-default > .panel-heading {
-//  background-color: black;
+  background-color: ghostwhite;
 //  border-color: red;
 //  border-width: thin;
 //  color: white;
@@ -455,9 +487,79 @@ ul {
   list-style: none;
 }
 
+
+
+.members-list {
+  color: black;//
+//  margin-left: 10px;
+//  margin-right: 10px;
+padding-right:20px;
+  width: 100%;
+  white-space: nowrap;
+  position:relative;
+}
+
+.member-email {
+  margin-right: 30px;
+}
+
+.member-container {
+  width: 100%;
+  white-space: nowrap;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.member-container div {
+  width: 100%;
+}
+
+.add-member {
+  color: black;
+ // margin-left: 10px;
+//  margin-right: 50px;
+  text-align: center;
+  align: center;
+}
+
+.member-modal {
+  margin: 0px;
+}
+
+.card-display .close {
+  opacity:1;
+}
+
+.card-display:hover {
+  opacity: 0.5;
+}
+
+.delete-member {
+  color: crimson;
+  cursor: pointer;
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+
+//  float: right;
+}
+
+
 .dropdown-toggle {
   vertical-align: bottom;
   margin-top: 27px;
+  border-color: dimgrey;
+  border-width: 2px;
+  background-color: ghostwhite;
+}
+
+.dropdown-menu {
+  border-color: dimgrey;
+  border-width: 2px;
+  background-color: ghostwhite;
+  min-width: 100%;
+  white-space: nowrap;
 }
 
 .show-board-header {
@@ -470,6 +572,7 @@ ul {
    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
+   font-weight: bold;
 }
 
 .boards-index-title h1 {

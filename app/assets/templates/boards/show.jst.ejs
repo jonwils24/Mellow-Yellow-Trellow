@@ -11,11 +11,9 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+          <div id="board-members"></div>
           <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+          <li class="add-member" role="presentation"><button type="button" class="btn btn-custom-india btn-sm member-modal">Add Member</button></li>
         </ul>
       </div>
     </div>
@@ -50,7 +48,29 @@
             <input type="submit" class="btn btn-custom">
           </form>
         </div>
-        
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+          <h3 class="modal-title"><%= board.escape('title') %></h3>
+          <br>
+          <h4 class="modal-title" id="myModalLabel">Add Member</h4>
+        </div>
+        <div class="modal-body">
+          <form class="member-form">
+            <label>
+               Member Email
+               </label><br>
+              <input type="text" name="member[email]" class="memberEmail">
+            <br><br>
+            <input type="submit" class="btn btn-custom">
+          </form>
+        </div>
       </div>
     </div>
   </div>

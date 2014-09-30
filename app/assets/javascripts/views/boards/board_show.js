@@ -5,16 +5,22 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   
   events: {
     'submit .list-form': 'createList',
-    'click .list-modal': 'displayModal',
+    'click .list-modal': 'displayListModal',
+    'submit .member-form': 'createMember',
+    'click .member-modal': 'displayMemberModal',
     'sortstop': 'saveListOrd'
   },
   
   initialize: function () {
     this.collection = this.model.lists();
+    this.memberCollection = this.model.members();
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addList);
     this.listenTo(this.collection, 'remove', this.removeList);
+    this.listenTo(this.memberCollection, 'add', this.addMember);
+    this.listenTo(this.memberCollection, 'remove', this.removeMember);
     this.model.lists().each(this.addList.bind(this));
+    this.model.members().each(this.addMember.bind(this));
   },
   
   addList: function (list) {
@@ -23,6 +29,13 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
     this.addSubview("#lists", listShow);
   }, 
+  
+  addMember: function (member) {
+    var memberShow = new TrelloClone.Views.MemberShow({
+      model: member
+    });
+    this.addSubview("#board-members", memberShow);
+  },
   
   saveListOrd: function (event) {
     event.stopPropagation();
@@ -39,9 +52,14 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
   },
   
-  displayModal: function (event) {
+  displayListModal: function (event) {
     event.preventDefault();
     this.$('.listModal').modal('show');
+  },
+  
+  displayMemberModal: function (event) {
+    event.preventDefault();
+    this.$('.memberModal').modal('show');
   },
   
   createList: function(event) {
@@ -54,6 +72,20 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
       success: function() {
         this.$('.listModal').modal('hide');
         this.$('.listTitle').val('');
+      },
+      wait: true
+    })
+  },
+  
+  createMember: function(event) {
+    event.preventDefault();
+    var $form = $(event.target);
+    var data = $form.serializeJSON();
+    data.member.board_id = this.model.get('id');
+    this.memberCollection.create(data.member, {
+      success: function() {
+        this.$('.memberModal').modal('hide');
+        this.$('.memberEmail').val('');
       },
       wait: true
     })
@@ -90,5 +122,14 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
       }
     );
     this.removeSubview("#lists", subview);
+  },
+  
+  removeMember: function (member) {
+    var subview = _.find(
+      this.subviews("#board-members"), function (subview) {
+        return subview.model === member;
+      }
+    );
+    this.removeSubview("#board-members", subview);
   }  
 });
