@@ -28,7 +28,7 @@ guestBoardListCard2 = guestBoardList1.cards.create(title: 'Second Card', ord: 1)
 guestBoardListCard3 = guestBoardList1.cards.create(title: 'Third Card', ord: 2)
 guestBoardListCard4 = guestBoardList1.cards.create(title: 'Fourth Card', ord: 3)
 
-# boardMember1 = guestBoard1.members.create(user_id: 2)
-# boardMember2 = guestBoard1.members.create(user_id: 3)
+boardMember1 = BoardMembership.create(user_id: 2, board_id: 1)
+boardMember2 = BoardMembership.create(user_id: 3, board_id: 1)
 
 

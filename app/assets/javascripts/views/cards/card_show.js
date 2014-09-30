@@ -28,6 +28,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   },
   
   displayModal: function () {
+    $('.delete-card').confirmation();
     this.$('.cardShowModal').modal('show');    
   },
   
@@ -47,8 +48,9 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   },
   
   deleteCard: function () {
-    this.hideModal();
-    this.model.destroy();
+    $('.delete-card').confirmation('show');
+    // this.hideModal();
+//     this.model.destroy();
   }
 });
 

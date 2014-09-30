@@ -29,23 +29,5 @@
 //= require_tree .
 
 
-// $(document).ready(function () {
-//   $("#boardModal").submit(function(event) {
-//     event.preventDefault();
-//     var form = $(event.target);
-//     $.ajax({
-//       url: "/api/boards",
-//       type: "POST",
-//       data: form.serializeJSON(),
-//       dataType: "json",
-//       success: function() {
-//         console.log("modal clicked");
-//         $("#boardModal").modal("hide");
-//       },
-//       error: function() {
-//         console.log("not working");
-//       }
-//     });
-//   });
-// });
+
 
