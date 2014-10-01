@@ -73,6 +73,14 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     });
   },
   
+  receiveCard: function(event, ui) {
+    debugger
+  },
+
+  removeCard: function(event, ui) {
+    debugger
+  },
+  
   createCard: function(event) {
     event.preventDefault();
     var $form = $(event.target);
@@ -103,7 +111,9 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   },
   
   sortableizeCards: function(){
-    this.$('#cards').sortable();
+    this.$('#cards').sortable({
+      connectWith: '.sortable-group'
+    });
   },
   
   removeCard: function (card) {
