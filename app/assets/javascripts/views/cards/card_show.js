@@ -12,7 +12,6 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    window.v = this.$el
   },
   
   render: function () {
@@ -29,9 +28,11 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   
   displayModal: function () {
     var that = this;
-    this.$('.cardShowModal').modal('show');    
+    var board_id = this.model.collection.list.get('board_id');
+    this.$('.cardShowModal').modal('show');
     $('[data-toggle="confirmation"]').confirmation({
       placement: 'top',
+      href: '#/boards/' + board_id,
       onConfirm: function () {
         that.hideModal();
         that.model.destroy();

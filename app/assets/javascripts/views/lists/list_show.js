@@ -55,9 +55,11 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   
   displayListOptions: function () {
     var that = this;
+    var board_id = this.model.get('board_id');
     this.$('.listOptionsModal').modal('show');
     $('[data-toggle="confirmation"]').confirmation({
       placement: 'top',
+      href: '#/boards/' + board_id,
       onConfirm: function () {
         that.hideModal();
         that.model.destroy();
@@ -113,7 +115,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.collection.create(data.card, {
       success: function() {
         this.$('.cardModal').modal('hide'); 
-        this.$('.cardTitle').val('');//does not work
+        this.$('.cardTitle').val('');
         this.$('.cardContent').val('');
       },
       wait: true
