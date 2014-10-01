@@ -2,14 +2,19 @@ module Api
   class BoardMembershipsController < ApiController
     def create
       user = User.find_by_email(params[:email])
-      user_id = user.id
       
-      @membership = BoardMembership.new(board_id: member_params[:board_id], user_id: user_id)
+      if user
+        user_id = user.id
       
-      if @membership.save
-        render json: @membership
+        @membership = BoardMembership.new(board_id: member_params[:board_id], user_id: user_id)
+      
+        if @membership.save
+          render json: @membership
+        else
+          render json: @membership.errors.full_messages, status: :unprocessable_entity
+        end
       else
-        render json: @membership.errors.full_messages, status: :unprocessable_entity
+        #some error for no user
       end
     end
     

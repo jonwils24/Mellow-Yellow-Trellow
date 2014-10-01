@@ -312,6 +312,26 @@ body {
 }
 //
 
+.invalidMemberModal .modal-content{
+  background-color: rgba(153, 0, 0, 1);
+  border: solid;
+  border-color: white;
+  margin-top: 100px;
+  width: 500px;
+  position: fixed;
+  left: 8%;
+}
+
+.invalidMemberModal .modal-content .modal-title{
+  color: white;
+  text-align: center;
+}
+
+.invalidMemberModal .modal-content .modal-body{
+  color: white;
+  text-align: center;
+}
+
 textarea {
   height: auto;
 }

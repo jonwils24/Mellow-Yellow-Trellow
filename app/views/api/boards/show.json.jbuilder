@@ -1,4 +1,4 @@
-json.(@board, :id, :title, :created_at, :updated_at)
+json.(@board, :id, :title, :user_id, :created_at, :updated_at)
 
 # if current_user.id == @board.user_id
 #   json.members @board.board_memberships do |membership|

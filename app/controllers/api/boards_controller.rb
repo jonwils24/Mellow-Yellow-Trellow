@@ -2,7 +2,6 @@ module Api
   class BoardsController < ApiController
     def index
       @boards = current_user.all_boards
-      # @boards.concat(current_user.memberships)
       render json: @boards
     end
     
