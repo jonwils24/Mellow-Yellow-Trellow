@@ -413,9 +413,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   text-decoration: none;
 }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+.navbar-default .navbar-brand .brand:hover, .navbar-default .navbar-brand .brand:focus {
   color: grey;
   background-color: transparent;
+}
+
+.navbar-default .navbar-nav .navbar-header .navbar-brand .email {
+  color: white;
+}
+
+.popover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.popover-title {
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -617,6 +633,18 @@ padding-right:20px;
    font-weight: bold;
    display: inline-block;
    padding-right: 40px;
+   margin-bottom: 0px;
+}
+
+.show-board-header h4 {
+   color: black;
+   //-webkit-text-fill-color: dimgrey; /* Will override color (regardless of order) */
+//   -webkit-text-stroke-width: 0.7px;
+//-webkit-text-stroke-color: black;
+   font-weight: bold;
+   padding-left: 20px;
+   margin-top: 0px;
+   margin-bottom: 20px;
 }
 
 .boards-index-title h1 {

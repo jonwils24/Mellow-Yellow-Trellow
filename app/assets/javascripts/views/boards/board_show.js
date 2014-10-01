@@ -109,9 +109,11 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     //we need to call $sortable on all of the lists' cards after
     this.sortableizeLists();
     this.$('#lists').sortable();
-    
+    console.log(this.model.get('user_id'));
     if(!(this.model.get('user_id') === TrelloClone.currentUserId)) {
       this.$el.addClass('not-owner');
+    } else {
+      this.$el.removeClass('not-owner');
     }
     console.log('rendering board show')
     return this;

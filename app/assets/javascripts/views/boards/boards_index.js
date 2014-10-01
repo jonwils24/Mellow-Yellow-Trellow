@@ -8,7 +8,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   },
   
   initialize: function () {
-    $('body').css('background-color', 'transparent');
+    // $('body').css('background-color', 'transparent');
     this.listenTo(this.collection, 'sync', this.render);
   },
   

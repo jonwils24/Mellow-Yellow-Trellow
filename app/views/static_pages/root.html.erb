@@ -7,7 +7,10 @@
 <script>
 
 var currentUserId = <%= current_user.id %>
+var currentUserEmail = '<%= current_user.email %>'
+
 TrelloClone.currentUserId = currentUserId
+TrelloClone.currentUserEmail = currentUserEmail
 
 $(TrelloClone.initialize({
   $main: $('#content'),

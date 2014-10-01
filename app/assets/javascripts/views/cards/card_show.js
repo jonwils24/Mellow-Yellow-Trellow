@@ -7,12 +7,12 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   
   events: {
     'click .card-show-modal': 'displayModal',
-    'submit .card-show-form': 'updateCard',
-    'click .delete-card': 'deleteCard'
+    'submit .card-show-form': 'updateCard'
   },
   
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    window.v = this.$el
   },
   
   render: function () {
@@ -28,8 +28,15 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
   },
   
   displayModal: function () {
-    // $('.delete-card').confirmation();
+    var that = this;
     this.$('.cardShowModal').modal('show');    
+    $('[data-toggle="confirmation"]').confirmation({
+      placement: 'top',
+      onConfirm: function () {
+        that.hideModal();
+        that.model.destroy();
+      }
+    });
   },
   
   updateCard: function (event) {
@@ -45,12 +52,6 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
     $('.cardShowModal').modal('hide');
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
-  },
-  
-  deleteCard: function () {
-    $('.delete-card').confirmation('show');
-    // this.hideModal();
-//     this.model.destroy();
   }
 });
 
