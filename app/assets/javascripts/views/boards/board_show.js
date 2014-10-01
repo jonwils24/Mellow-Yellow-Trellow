@@ -1,7 +1,13 @@
 TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   template: JST['boards/show'],
   
-  className: 'clearfix',
+  className: function() {
+    if(this.model.get('user_id') === TrelloClone.currentUserId) {
+      return 'clearfix'
+    } else {
+      return 'clearfix not-owner'
+    }
+  },
   
   events: {
     'submit .list-form': 'createList',

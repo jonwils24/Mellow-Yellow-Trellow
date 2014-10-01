@@ -551,8 +551,14 @@ padding-right:20px;
   right:0;
   top:50%;
   transform:translateY(-50%);
+}
 
-//  float: right;
+.not-owner .delete-member {
+  display: none;
+}
+
+.not-owner .member-modal, .not-owner .divider {
+  display: none;
 }
 
 .member-dropdown {

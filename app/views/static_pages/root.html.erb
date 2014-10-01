@@ -4,7 +4,13 @@
   <div id="content" class="col-sm-12 white-panel"></div>
 </div>
 
-<script>$(TrelloClone.initialize({
+<script>
+
+var currentUserId = <%= current_user.id %>
+TrelloClone.currentUserId = currentUserId
+
+$(TrelloClone.initialize({
   $main: $('#content'),
   $navbar: $('#navbar-bb')
-}));</script>
+}));
+</script>
