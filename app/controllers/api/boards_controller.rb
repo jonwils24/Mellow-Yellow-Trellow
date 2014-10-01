@@ -1,12 +1,13 @@
 module Api
   class BoardsController < ApiController
     def index
-      @boards = current_user.boards
+      @boards = current_user.all_boards
+      # @boards.concat(current_user.memberships)
       render json: @boards
     end
     
     def show
-      @board = current_user.boards.find(params[:id])
+      @board = current_user.all_boards.find(params[:id])
       render :show
     end
     

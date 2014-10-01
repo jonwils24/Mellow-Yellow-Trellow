@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   
   has_many :boards
   has_many :board_memberships
+  has_many :memberships, through: :board_memberships, source: :board
   
   attr_reader :password
   
@@ -18,6 +19,14 @@ class User < ActiveRecord::Base
     user = User.find_by(email: email)
     return nil unless user && user.valid_password?(password)
     user
+  end
+  
+  def all_boards()
+    Board.joins(
+         "LEFT OUTER JOIN board_memberships ON boards.id = board_memberships.board_id")
+         .where(
+         "boards.user_id = :user_id OR board_memberships.user_id = :user_id",
+         {user_id: self.id}).distinct("boards.id")
   end
   
   def password=(password)
