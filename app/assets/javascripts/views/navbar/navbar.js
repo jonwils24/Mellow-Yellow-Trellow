@@ -3,7 +3,8 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
   
   events: {
     'submit .board-form': 'createBoard',
-    'click .add-board': 'displayModal'
+    'click .add-board': 'displayModal',
+    'click div.email': 'puff'
   },
   
   createBoard: function(event){
@@ -18,6 +19,10 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
       },
       wait: true
     })
+  },
+  
+  puff: function () {
+    $('div#content').toggle("fade");
   },
   
   displayModal: function (event) {

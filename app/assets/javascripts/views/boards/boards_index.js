@@ -14,7 +14,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   },
   
   puff: function () {
-    $(".boards").toggle("");
+    $(".boards").toggle("fade");
   },
   
   create: function (event) {

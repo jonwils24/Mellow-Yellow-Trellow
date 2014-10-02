@@ -80,6 +80,10 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       
       item.save({ord: index});
     }.bind(this));
+    this.subviews()[".card-display"]=_.sortBy(this.subviews()[".card-display"], function(subview){
+      return subview.model.attributes.ord;
+    });
+    this.collection.sort()
   },
   
   receiveCard: function(event, ui) {
@@ -96,16 +100,15 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.saveCardOrd(event);
   },
 
-  // removeCard: function(event, ui) {
-//     var $cardDisplay = ui.item;
-//     var cardId = $cardDisplay.data('card-id');
-//     var cards = this.model.cards();
-//     var cardToRemove = cards.get(cardId);
-//     var cardSubviews = this.subviews('#cards');
-//     // this.removeCardView(cardSubviews);
-// //     cards.remove(cardToRemove);
-//     // alert("removing");
-//   },
+  removeCard: function(event, ui) {
+    var $cardDisplay = ui.item;
+    var cardId = $cardDisplay.data('card-id');
+    var cards = this.model.cards();
+    var cardToRemove = cards.get(cardId);
+    var cardSubviews = this.subviews('#cards');
+    this.collection.remove(cardToRemove, {silent: true});
+    // this.removeCardView(cardToRemove);
+    },
   
   createCard: function(event) {
     event.preventDefault();

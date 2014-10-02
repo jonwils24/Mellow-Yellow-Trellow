@@ -51,7 +51,11 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
       var item = collection.get(itemId);
       
       item.save({ord: index});
+    }.bind(this));
+    this.subviews()[".list-display"]=_.sortBy(this.subviews()[".list-display"], function(subview){
+      return subview.model.attributes.ord;
     });
+    this.collection.sort()
   },
   
   displayListModal: function (event) {

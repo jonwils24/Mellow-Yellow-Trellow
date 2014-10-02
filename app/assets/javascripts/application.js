@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/sortable
+//= require jquery-ui/effect-fade
+//= require jquery-ui/effect-explode
+//= require jquery-ui/effect-puff
 //= require jquery.serializejson
 //= require underscore
 //= require backbone

@@ -11,17 +11,30 @@
       <label>Email<br>
         <input type="text" 
                name="user[email]" 
-               placeholder="guest@gmail.com" 
-               value="guest@gmail.com">
+               placeholder="enter email" 
+               value="">
       </label><br><br>
   
       <label>Password<br>
         <input type="password"
                name="user[password]"
-               placeholder="password"
-               value="password">
+               placeholder="enter password"
+               value="">
       </label><br><br>
       <input type="submit" value="Submit" class="btn btn-custom-india-home">
+    </form>
+    <form type="hidden" action ="/session" method="post">
+      <%= authenticate %>
+        <input type="hidden" 
+               name="user[email]" 
+               placeholder="guest@gmail.com" 
+               value="guest@gmail.com">
+  
+        <input type="hidden"
+               name="user[password]"
+               placeholder="password"
+               value="password">
+      <input type="submit" value="Guest Login" class="btn btn-custom-india-home">
     </form>
   </div>
 </div>
