@@ -73,8 +73,8 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.collection.create(data.list, {
       success: function() {
         this.$('.listModal').modal('hide');
-        this.$('.listTitle').val('');
-      },
+        $form.find('.listTitle').val('');
+      }.bind(this),
       wait: true
     })
   },
@@ -89,7 +89,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
       success: function() {
         this.$('.memberModal').modal('hide');
         this.$('.memberEmail').val('');
-      },
+      }.bind(this),
       error: function() {
         // alert("invalid");
         this.$('.invalidMemberModal').modal('show');
