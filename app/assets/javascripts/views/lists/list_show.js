@@ -79,7 +79,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       var item = collection.get(itemId);
       
       item.save({ord: index});
-    });
+    }.bind(this));
   },
   
   receiveCard: function(event, ui) {

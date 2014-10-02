@@ -4,12 +4,17 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   className: 'boards-index',
   
   events: {
-    'submit .board-form': 'create'
+    'submit .board-form': 'create',
+    'click .boards-index-title': 'puff'
   },
   
   initialize: function () {
     // $('body').css('background-color', 'transparent');
     this.listenTo(this.collection, 'sync', this.render);
+  },
+  
+  puff: function () {
+    $(".boards").toggle("");
   },
   
   create: function (event) {
