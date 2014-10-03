@@ -1,96 +1,85 @@
-<div class='show-board-header'>
-  
+<div class='show-board-header'>  
+  <h1><%= board.escape('title') %></h1>
     
-      <h1><%= board.escape('title') %></h1>
-        
-      <div class="dropdown member-dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-          Board Members
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <div id="board-members"></div>
-          <li role="presentation" class="divider"></li>
-          <li class="add-member" role="presentation"><button type="button" class="btn btn-custom-india btn-sm member-modal">Add Member</button></li>
-        </ul>
-      </div>
-      <div class='row'>
-        <h4>Owner: <%= board.escape('owner_email') %></h4>
-      </div>
-      
-  
+  <div class="dropdown member-dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+      Board Members
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <div id="board-members"></div>
+      <li role="presentation" class="divider"></li>
+      <li class="add-member" role="presentation"><button type="button" class="btn btn-custom-india btn-sm member-modal">Add Member</button></li>
+    </ul>
+  </div>
+  <div class='row'>
+    <h4>Owner: <%= board.escape('owner_email') %></h4>
+  </div>
 </div>
 
 <div class='lists-window'>
-  
   <ul id="lists">
   </ul>
   
-  
-  
   <button type="button" class="btn btn-custom-india list-modal">Add List</button>
-  
-  <div class="modal fade listModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
-          <h3 class="modal-title"><%= board.escape('title') %></h3>
-          <br>
-          <h4 class="modal-title" id="myModalLabel">Create List</h4>
-        </div>
-        <div class="modal-body">
-          <form class="list-form">
-            <label>
-               Title
-               </label><br>
-              <input type="text" name="list[title]" class="listTitle">
-            <br><br>
-            <input type="submit" class="btn btn-custom">
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
-          <h3 class="modal-title"><%= board.escape('title') %></h3>
-          <br>
-          <h4 class="modal-title" id="myModalLabel">Add Member</h4>
-        </div>
-        <div class="modal-body">
-          <form class="member-form">
-            <label>
-               Member Email
-               </label><br>
-              <input type="text" name="member[email]" class="memberEmail">
-            <br><br>
-            <input type="submit" class="btn btn-custom">
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade invalidMemberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
-          <h3 class="modal-title">Email Invalid</h3>
-        </div>
-        <div class="modal-body">
-          <h4>Enter Valid Email</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
 </div>
 
+<div class="modal fade listModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+        <h3 class="modal-title"><%= board.escape('title') %></h3>
+        <br>
+        <h4 class="modal-title" id="myModalLabel">Create List</h4>
+      </div>
+      <div class="modal-body">
+        <form class="list-form">
+          <label>
+             Title
+             </label><br>
+            <input type="text" name="list[title]" class="listTitle">
+          <br><br>
+          <input type="submit" class="btn btn-custom">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="modal fade memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+        <h3 class="modal-title"><%= board.escape('title') %></h3>
+        <br>
+        <h4 class="modal-title" id="myModalLabel">Add Member</h4>
+      </div>
+      <div class="modal-body">
+        <form class="member-form">
+          <label>
+             Member Email
+             </label><br>
+            <input type="text" name="member[email]" class="memberEmail">
+          <br><br>
+          <input type="submit" class="btn btn-custom">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade invalidMemberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+        <h3 class="modal-title">Email Invalid</h3>
+      </div>
+      <div class="modal-body">
+        <h4>Enter Valid Email</h4>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,87 +1,85 @@
 <li>
-  
-<div class="panel panel-default">  
-  
-  <div class="panel-heading  list-heading " data-list-id="<%= list.id %>">
+  <div class="panel panel-default">  
+    <div class="panel-heading  list-heading " data-list-id="<%= list.id %>">
 
-    <button type="button" class="close clearfix list-options" data-list-id="<%= list.id %>"><i class="fa fa-list"></i></button>
+      <button type="button" class="close clearfix list-options" data-list-id="<%= list.id %>"><i class="fa fa-list"></i></button>
     
-    <h4 class="panel-heading "><%= list.escape('title') %></h4>
+      <h4 class="panel-heading "><%= list.escape('title') %></h4>
     
-  <ul id="cards" class="list-group sortable-group">
-  </ul>
-</div>
-  <div class="panel-footer">
-    <button type="button" class="btn btn-custom btn-sm card-modal add-card">Add Card</button>
+    <ul id="cards" class="list-group sortable-group">
+    </ul>
   </div>
-
-</div>
+    <div class="panel-footer">
+      <button type="button" class="btn btn-custom btn-sm card-modal add-card">Add Card</button>
+    </div>
+  </div>
 </li>
-  <div 
-    class="modal fade cardModal"  
-    tabindex="-1" 
-    role="dialog" 
-    aria-labelledby="myModalLabel" 
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
-          <h3 class="modal-title"><%= list.escape('title') %></h3>
+
+<div 
+  class="modal fade cardModal"  
+  tabindex="-1" 
+  role="dialog" 
+  aria-labelledby="myModalLabel" 
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+        <h3 class="modal-title"><%= list.escape('title') %></h3>
+        <br>
+        <h4 class="modal-title" id="myModalLabel">Create Card</h4>
+      </div>
+      <div class="modal-body">
+        <form class="card-form">
+          <label>Title</label>
+            <br>
+            <input type="text" name="card[title]" class="cardTitle">
+          <br><br>
+          <label>Description</label>
           <br>
-          <h4 class="modal-title" id="myModalLabel">Create Card</h4>
-        </div>
-        <div class="modal-body">
-          <form class="card-form">
-            <label>Title</label>
-              <br>
-              <input type="text" name="card[title]" class="cardTitle">
-            <br><br>
-            <label>Description</label>
-            <br>
-              <textarea rows="10" class="form-control cardContent" name="card[content]" ></textarea>
-            <br>
-            <input type="submit" class="btn btn-custom">
-          </form>
-        </div>
+            <textarea rows="10" class="form-control cardContent" name="card[content]" ></textarea>
+          <br>
+          <input type="submit" class="btn btn-custom">
+        </form>
       </div>
     </div>
   </div>
-  
-  
-  <div 
-    class="modal fade listOptionsModal"  
-    tabindex="-1" 
-    role="dialog" 
-    aria-labelledby="myModalLabel" 
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
-          <h3 class="modal-title"><%= board.escape('title') %></h3>
-          <br>
-          <h4 class="modal-title" id="myModalLabel">Update List</h4>
-        </div>
-        <div class="modal-body">
-          <form class="list-update-form">
-            <label>
-              Title
-               </label><br>
-              <input type="text" name="list[title]" class="listTitle" value="<%= list.get('title') %>">
-            <br><br>
-            <input type="submit" class="btn btn-custom">
-            
-          </form>
+</div>
+
+
+<div 
+  class="modal fade listOptionsModal"  
+  tabindex="-1" 
+  role="dialog" 
+  aria-labelledby="myModalLabel" 
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+        <h3 class="modal-title"><%= board.escape('title') %></h3>
+        <br>
+        <h4 class="modal-title" id="myModalLabel">Update List</h4>
+      </div>
+      <div class="modal-body">
+        <form class="list-update-form">
+          <label>
+            Title
+             </label><br>
+            <input type="text" name="list[title]" class="listTitle" value="<%= list.get('title') %>">
+          <br><br>
+          <input type="submit" class="btn btn-custom">
           
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-custom-danger delete-list" data-toggle="confirmation">Delete List</button>
-          
-        </div>
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom-danger delete-list" data-toggle="confirmation">Delete List</button>
+        
       </div>
     </div>
   </div>
+</div>
   
   
   

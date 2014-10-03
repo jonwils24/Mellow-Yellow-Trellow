@@ -47,7 +47,6 @@ div .margin-base-vertical {
 }
 
 .list-group-item {
-//  background-color: dimgrey;
   color: white;
   border-color: white;
   border-radius: 0px;
@@ -166,12 +165,6 @@ i {
 body {
   background-image: url('intro-bg.jpg');
   background-size: cover;
-  //position: absolute;
-//  //top: 0;
-////  left: 0;
-//  //
-//  min-width: 100%;
-//  min-height: 80%;
 }
 
 .modal-content div {
@@ -180,8 +173,6 @@ body {
 
 .white-panel {
   width: 97%;
-//  min-height: 95%;
-//  height: 700px;
   height: 97%;
   overflow-y: scroll;
   overflow-x: scroll;
@@ -320,7 +311,6 @@ body {
   text-align: center;
 }
 
-//
 .memberEmail {
   width: 100%;
   color: black;
@@ -348,7 +338,6 @@ body {
   color: white;
   text-align: center;
 }
-//
 
 .invalidMemberModal .modal-content{
   background-color: rgba(153, 0, 0, 1);
@@ -394,9 +383,6 @@ textarea {
 
 .panel-default > .panel-heading {
   background-color: ghostwhite;
-//  border-color: red;
-//  border-width: thin;
-//  color: white;
 }
 
 .glyphicon-list {
@@ -421,24 +407,17 @@ h1 {
 
 
 .navbar {
-  //background-color: dimgray;
-//  border-style: solid;
-//  border-width: 5px;
-//  border-color: dimgray;
-//  color: #f6f6f6;
-border: none;
-width: 100%;
-height: 100%;
-background: #4c4c4c; /* Old browsers */
-background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
-
-
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: #4c4c4c; /* Old browsers */
+  background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
 
 .navbar-brand {
@@ -455,10 +434,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   color: grey;
   background-color: transparent;
 }
-
-//.navbar-default .navbar-nav .navbar-header .navbar-brand .email {
-//  color: white;
-//}
 
 .popover {
   background-color: black;
@@ -541,7 +516,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   min-height: 100px;
   margin: 0 16px 16px 0;
   color: #f6f6f6;
-//  background-color: dimgray;
   font-size: 16px;
   padding: 8px 12px;
   display: block;
@@ -580,13 +554,11 @@ ul {
 
 
 .members-list {
-  color: black;//
-//  margin-left: 10px;
-//  margin-right: 10px;
-padding-right:20px;
+  color: black;
+  padding-right: 20px;
   width: 100%;
   white-space: nowrap;
-  position:relative;
+  position: relative;
 }
 
 .member-email {
@@ -606,8 +578,6 @@ padding-right:20px;
 
 .add-member {
   color: black;
- // margin-left: 10px;
-//  margin-right: 50px;
   text-align: center;
   align: center;
   margin-left: 10px;
@@ -673,7 +643,7 @@ padding-right:20px;
 }
 
 .show-board-header {
-  color: white; //change color
+  color: white;
   margin-left: 55px;
   width: 100%;
   position: relative;
@@ -699,9 +669,6 @@ padding-right:20px;
 
 .show-board-header h4 {
    color: black;
-   //-webkit-text-fill-color: dimgrey; /* Will override color (regardless of order) */
-//   -webkit-text-stroke-width: 0.7px;
-//-webkit-text-stroke-color: black;
    font-weight: bold;
    margin-left: 40px;
    margin-top: 5px;
@@ -756,7 +723,7 @@ padding-right:20px;
   height: 100%;
 }
 
-.list-display {  //removed from list show.jst.ejs
+.list-display {  
   background-color: transparent;
   width: 260px;
   margin: 0 5px;
@@ -771,7 +738,6 @@ padding-right:20px;
 }
 
 .panel-footer {
-//  background-color: black;
   border-color: black;
   background: rgb(69,72,77); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */

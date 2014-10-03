@@ -91,7 +91,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     var $form = $(event.target);
     var data = $form.serializeJSON();
     data.list.board_id = this.model.get('id');
-    data.list.ord = this.model.lists().length; //sets list ord
+    data.list.ord = this.model.lists().length;
     this.collection.create(data.list, {
       success: function() {
         this.$('.listModal').modal('hide');
@@ -113,7 +113,6 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
         this.$('.memberEmail').val('');
       }.bind(this),
       error: function() {
-        // alert("invalid");
         this.$('.invalidMemberModal').modal('show');
       },
       wait: true
@@ -126,18 +125,14 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
     
     this.$el.html(content);
-    //this puts the lists back in the page
     this.attachSubviews();
-    //we need to call $sortable on all of the lists' cards after
     this.sortableizeLists();
     this.$('#lists').sortable();
-    console.log(this.model.get('user_id'));
     if(!(this.model.get('user_id') === TrelloClone.currentUserId)) {
       this.$el.addClass('not-owner');
     } else {
       this.$el.removeClass('not-owner');
     }
-    console.log('rendering board show')
     return this;
   },
   

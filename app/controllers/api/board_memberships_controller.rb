@@ -13,15 +13,10 @@ module Api
         else
           render json: @membership.errors.full_messages, status: :unprocessable_entity
         end
-      else
-        #some error for no user
       end
     end
     
     def destroy
-      # user = User.find_by_email(params[:email])
-#       user_id = user.id
-      
       membership = BoardMembership.find(params[:id])
       membership.destroy
       render json: {}

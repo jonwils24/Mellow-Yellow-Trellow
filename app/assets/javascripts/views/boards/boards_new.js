@@ -11,6 +11,4 @@ TrelloClone.Views.BoardsNew = Backbone.View.extend({
     
     return this;
   }
-  
-  
-})
+});
