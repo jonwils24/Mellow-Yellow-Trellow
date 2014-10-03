@@ -5,29 +5,22 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   
   events: {
     'submit .board-form': 'create',
-    'click .boards-index-title h1': 'puff'
+    'click .boards-index-title h1': 'flip'
   },
   
   initialize: function () {
-    // $('body').css('background-color', 'transparent');
     this.listenTo(this.collection, 'sync', this.render);
   },
   
-  puff: function () {
-    $(".boards").toggle("drop");
-  },
-  
-  create: function (event) {
-    event.preventDefault();
-    
-    var params = $(event.currentTarget).serializeJSON();
-    var newBoard = new TrelloClone.Models.Board(params['board']);
-    newBoard.save({}, {
-      success: function () {
-        TrelloClone.Collections.boards.add(newBoard);
-        Backbone.history.navigate('/boards/' + newBoard.id, { trigger: true });
-      }
-    });
+  flip: function () {
+    $(".boards").addClass('animated flip');
+    setTimeout(function() {
+      $(".boards").removeClass('flip');
+      $(".boards").addClass('wobble');
+    }, 1000);
+    setTimeout(function() {
+      $(".boards").removeClass('animated wobble');
+    }, 2000);
   },
   
   render: function () {

@@ -14,3 +14,29 @@
     </li>
   <% }); %>
 </ul>
+
+<div class="modal fade updateBoardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close x" data-dismiss="modal"><i class="fa fa-times-circle"></i><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Update Board</h4>
+      </div>
+      <div class="modal-body">
+        <form class="update-board-form">
+          <label>
+             Title
+           </label><br>
+            <input type="text" name="board[title]" class="boardTitle" value=>
+            <br><br>
+          <input type="submit" class="btn btn-custom">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-custom-danger delete-list" data-toggle="confirmation">Delete List</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+

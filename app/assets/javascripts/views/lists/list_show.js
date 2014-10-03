@@ -54,7 +54,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var that = this;
     var board_id = this.model.get('board_id');
     this.$('.listOptionsModal').modal('show');
-    $('.delete-list').confirmation({
+    this.$('.delete-list').confirmation({
       placement: 'top',
       href: '#/boards/' + board_id,
       onConfirm: function () {

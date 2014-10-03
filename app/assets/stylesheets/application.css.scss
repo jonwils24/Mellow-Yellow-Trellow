@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require jquery-ui
+ *= require animate
  *= require_tree .
 
  */
@@ -25,6 +26,10 @@
 
 div.show-board-header h1, div.show-board-header h4, .boards-index-title h1, div.email {
   cursor: pointer;
+}
+
+div.lists-window ul#lists {
+  margin-bottom: 400px;
 }
 
 .fa-cog {

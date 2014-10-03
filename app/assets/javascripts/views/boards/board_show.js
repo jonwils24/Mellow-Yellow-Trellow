@@ -27,6 +27,47 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   
   shake: function () {
     $('div.show-board-header h4').effect("shake");
+    
+    
+    $element = $('div.panel');
+    $element.addClass('animated');
+  
+    if ($element.hasClass('zoomOutUp')) {
+      $element.addClass('zoomInDown');
+      $element.toggleClass('zoomOutUp');
+      setTimeout(function() {
+        $element.removeClass('zoomInDown');
+      }, 500);
+    } else {
+      $element.addClass('zoomOutUp');
+    }
+    
+    $element2 = $('div button.list-modal');
+    $element2.addClass('animated');
+  
+    if ($element2.hasClass('fadeOutRightBig')) {
+      $element2.addClass('fadeInRightBig');
+      $element2.toggleClass('fadeOutRightBig');
+      setTimeout(function() {
+        $element2.removeClass('fadeInRightBig');
+      }, 500);
+    } else {
+      $element2.addClass('fadeOutRightBig');
+    }
+    
+    $element3 = $('div button.dropdown-toggle');
+    $element3.addClass('animated');
+  
+    if ($element3.hasClass('fadeOutRightBig')) {
+      $element3.addClass('fadeInRightBig');
+      $element3.toggleClass('fadeOutRightBig');
+      setTimeout(function() {
+        $element3.removeClass('fadeInRightBig');
+      }, 500);
+    } else {
+      $element3.addClass('fadeOutRightBig');
+    }
+    
   },
   
   effect: function () {
@@ -39,6 +80,36 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
         $('i.fa-cog').toggleClass('fa-spin');
       }, 500);
     }
+    
+    var $element = $('div button.list-modal');
+    $element.addClass('animated');
+    $element.toggleClass('rubberBand');
+    setTimeout(function() {
+      $element.toggleClass('rubberBand');
+    }, 500);
+
+    var $element2 = $('div button.dropdown-toggle');
+    $element2.addClass('animated');
+    $element2.toggleClass('rubberBand');
+    setTimeout(function() {
+      $element2.toggleClass('rubberBand');
+    }, 500);
+
+    var $element3 = $('div.list-display');
+    $element3.addClass('animated');
+    $element3.toggleClass('rubberBand');
+    setTimeout(function() {
+      $element3.toggleClass('rubberBand');
+    }, 500);
+    
+    var $element4 = $('div.show-board-header h1');
+    $element4.addClass('animated');
+    $element4.toggleClass('rubberBand');
+    setTimeout(function() {
+      $element4.toggleClass('rubberBand');
+    }, 500);
+    
+    
   },
   
   addList: function (list) {
