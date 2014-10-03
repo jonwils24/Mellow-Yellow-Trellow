@@ -11,6 +11,6 @@ window.TrelloClone = {
     });
     Backbone.history.start();
     
-    options.$navbar.html(new TrelloClone.Views.Navbar().render().$el);
+    options.$navbar.html(new TrelloClone.Views.Navbar().render().$el);    
   }
 };

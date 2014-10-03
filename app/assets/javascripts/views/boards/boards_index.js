@@ -5,7 +5,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   
   events: {
     'submit .board-form': 'create',
-    'click .boards-index-title': 'puff'
+    'click .boards-index-title h1': 'puff'
   },
   
   initialize: function () {
@@ -14,7 +14,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   },
   
   puff: function () {
-    $(".boards").toggle("fade");
+    $(".boards").toggle("drop");
   },
   
   create: function (event) {

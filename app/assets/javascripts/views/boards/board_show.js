@@ -8,7 +8,9 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     'click .list-modal': 'displayListModal',
     'submit .member-form': 'createMember',
     'click .member-modal': 'displayMemberModal',
-    'sortstop': 'saveListOrd'
+    'sortstop': 'saveListOrd',
+    'click div.show-board-header h1': 'shake',
+    'click div.show-board-header h4': 'effect'
   },
   
   initialize: function () {
@@ -21,6 +23,22 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.listenTo(this.memberCollection, 'remove', this.removeMember);
     this.model.lists().each(this.addList.bind(this));
     this.model.members().each(this.addMember.bind(this));
+  },
+  
+  shake: function () {
+    $('div.show-board-header h4').effect("shake");
+  },
+  
+  effect: function () {
+    if ($('i.fa-cog').hasClass('fa-spin')) {
+      $('i.fa-cog').toggleClass('fa-spin');
+      $('i.fa-cog').effect('bounce');
+    } else {
+      $('i.fa-cog').effect('bounce');
+      setTimeout(function() {
+        $('i.fa-cog').toggleClass('fa-spin');
+      }, 500);
+    }
   },
   
   addList: function (list) {

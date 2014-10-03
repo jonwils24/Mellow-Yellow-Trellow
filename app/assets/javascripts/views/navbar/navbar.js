@@ -22,7 +22,7 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
   },
   
   puff: function () {
-    $('div#content').toggle("fade");
+    $('div#content').toggle("clip");
   },
   
   displayModal: function (event) {
