@@ -9,8 +9,8 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     'click .card-modal': 'displayModal',
     'click .list-options': 'displayListOptions',
     'sortstop': 'saveCardOrd',
-    'sortremove #cards': 'removeCard',
-    'sortreceive #cards': 'receiveCard',
+    'sortremove .cards': 'removeCard',
+    'sortreceive .cards': 'receiveCard',
     'click div.panel div.panel-heading h4.panel-heading': 'effect'
   },
   
@@ -28,7 +28,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var cardShow = new TrelloClone.Views.CardShow({
       model: card
     });
-    this.addSubview("#cards", cardShow);
+    this.addSubview(".cards", cardShow);
   },
   
   updateList: function (event) {
@@ -78,7 +78,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       item.save({ ord: index });
     }.bind(this));
     
-    this.subviews()["#cards"] = _.sortBy(this.subviews()["#cards"], function(subview){
+    this.subviews()[".cards"] = _.sortBy(this.subviews()[".cards"], function(subview){
       return subview.model.attributes.ord;
     });
     this.collection.sort()
@@ -93,8 +93,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
       list_id: this.model.id,
       ord: newOrd
     });
-    cardClone.save();
-    this.collection.add(cardClone);
+    this.collection.add(cardClone, {silent: true});
     this.saveCardOrd(event);
   },
 
@@ -103,9 +102,10 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var cardId = $cardDisplay.data('card-id');
     var cards = this.model.cards();
     var cardToRemove = cards.get(cardId);
-    var cardSubviews = this.subviews('#cards');
+    var cardSubviews = this.subviews('.cards');
+    var subviewToRemove = _(cardSubviews).findWhere({model: cardToRemove})
     this.collection.remove(cardToRemove, {silent: true});
-    this.removeCardView(cardToRemove);
+    cardSubviews.splice(cardSubviews.indexOf(subviewToRemove), 1);
   },
   
   createCard: function(event) {
@@ -137,18 +137,18 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   },
   
   sortableizeCards: function(){
-    this.$('#cards').sortable({
+    this.$('.cards').sortable({
       connectWith: '.sortable-group'
     });
   },
   
   removeCardView: function (card) {
     var subview = _.find(
-      this.subviews("#cards"), function (subview) {
+      this.subviews(".cards"), function (subview) {
       return subview.model === card;
     });
     
-    this.removeSubview("#cards", subview);
+    this.removeSubview(".cards", subview);
   }
 });
 
