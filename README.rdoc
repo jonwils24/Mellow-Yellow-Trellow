@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A clone of the project management application Trello.  Uses Ruby, Rails, JavaScript, jQuery, Backbone, Bootstrap, HTML, and CSS to reproduce the basic functions of Trello and create a custom styling.
 
-Things you may want to cover:
+Basic Functions
 
-* Ruby version
+* User Sign Up / Sign In
 
-* System dependencies
+* Guest Login
 
-* Configuration
+* User can create a board
 
-* Database creation
+* Owner of board can add/remove members via email address
 
-* Database initialization
+* Owner or member of board can add/remove lists and cards
 
-* How to run the test suite
+* List and cards can be sorted by dragging
 
-* Services (job queues, cache servers, search engines, etc.)
+* Cards can be dragged into different lists
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Keep an eye out for Easter Eggs
