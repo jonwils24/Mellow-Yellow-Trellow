@@ -190,6 +190,11 @@ body {
   position: absolute;
   border-radius: 25px;
   box-sizing: border-box;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .boardModal .modal-content{
