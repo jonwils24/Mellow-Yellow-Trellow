@@ -32,11 +32,18 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
     if ($element.hasClass('rollOut')) {
       $element.addClass('rollIn');
       $element.removeClass('rollOut');
+      $('.video').addClass('rollOut');
+      $('.video').removeClass('rollIn');
       setTimeout(function() {
         $element.removeClass('animated rollIn');
-      }, 500);
+        $('.video').removeClass('.rollOut');
+      }, 800);
     } else {
       $element.addClass('animated rollOut');
+      $('.video').removeClass('rollOut hidden');
+      $('.video').addClass('rollIn');
+      $('div.html5-video-player').removeClass('cued-mode');
+      $('div.html5-video-player').addClass('playing-mode');
     }
   },
   
