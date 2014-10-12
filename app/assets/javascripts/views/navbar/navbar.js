@@ -42,8 +42,6 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
       $element.addClass('animated rollOut');
       $('.video').removeClass('rollOut hidden');
       $('.video').addClass('rollIn');
-      $('div.html5-video-player').removeClass('cued-mode');
-      $('div.html5-video-player').addClass('playing-mode');
     }
   },
   
