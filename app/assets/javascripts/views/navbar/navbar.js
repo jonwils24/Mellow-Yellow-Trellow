@@ -18,7 +18,6 @@ TrelloClone.Views.Navbar = Backbone.View.extend({
         var board_id = TrelloClone.Collections.boards.last().get('id');
         that.$('.boardModal').modal('hide');
         that.$('.boardTitle').val('');
-        // Backbone.history.navigate("#/boards/" + board_id, {trigger: true});
         Backbone.history.navigate("#", {trigger: true});
         
       },
