@@ -37,7 +37,7 @@ guestBoardListCards6 = guestBoardList2.cards.create(title: 'Click the Board Memb
 guestBoardListCards7 = guestBoardList2.cards.create(title: 'Board owners can add/delete board members', ord: 2)
 guestBoardListCards8 = guestBoardList3.cards.create(title: 'Have you found all the Easter Eggs?')
 guestBoardListCards9 = guestBoardList3.cards.create(title: 'There are 3 on this page; 4 total on the site', ord: 1)
-guestBoardListCards10 = guestBoardList3.cards.create(title: 'Check this cards content to find the easter eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
+guestBoardListCards10 = guestBoardList3.cards.create(title: 'Check this cards content to find the Easter Eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
 guestBoardListCards001 = guestBoardList11.cards.create(title: 'Click the gear icon, then delete this card')
 guestBoardListCards002 = guestBoardList11.cards.create(title: 'Then click the list settings icon and delete this list', ord: 1)
 
@@ -56,7 +56,7 @@ guestBoardListCards61 = guestBoardList5.cards.create(title: 'Click the Board Mem
 guestBoardListCards71 = guestBoardList5.cards.create(title: 'Board owners can add/delete board members', ord: 2)
 guestBoardListCards81 = guestBoardList6.cards.create(title: 'Have you found all the Easter Eggs?')
 guestBoardListCards91 = guestBoardList6.cards.create(title: 'There are 3 on this page; 4 total on the site', ord: 1)
-guestBoardListCards101 = guestBoardList6.cards.create(title: 'Check this cards content to find the easter eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
+guestBoardListCards101 = guestBoardList6.cards.create(title: 'Check this cards content to find the Easter Eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
 guestBoardListCards003 = guestBoardList14.cards.create(title: 'Click the gear icon, then delete this card')
 guestBoardListCards004 = guestBoardList14.cards.create(title: 'Then click the list settings icon and delete this list', ord: 1)
 
@@ -75,7 +75,7 @@ guestBoardListCards611 = guestBoardList8.cards.create(title: 'Click the Board Me
 guestBoardListCards711 = guestBoardList8.cards.create(title: 'Board owners can add/delete board members', ord: 2)
 guestBoardListCards811 = guestBoardList9.cards.create(title: 'Have you found all the Easter Eggs?')
 guestBoardListCards911 = guestBoardList9.cards.create(title: 'There are 3 on this page; 4 total on the site', ord: 1)
-guestBoardListCards1011 = guestBoardList9.cards.create(title: 'Check this cards content to find the easter eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
+guestBoardListCards1011 = guestBoardList9.cards.create(title: 'Check this cards content to find the Easter Eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
 guestBoardListCards005 = guestBoardList17.cards.create(title: 'Click the gear icon, then delete this card')
 guestBoardListCards006 = guestBoardList17.cards.create(title: 'Then click the list settings icon and delete this list', ord: 1)
 
@@ -94,7 +94,7 @@ guestBoardListCards6111 = guestBoardList11.cards.create(title: 'Click the Board 
 guestBoardListCards7111 = guestBoardList11.cards.create(title: 'Board owners can add/delete board members', ord: 2)
 guestBoardListCards8111 = guestBoardList12.cards.create(title: 'Have you found all the Easter Eggs?')
 guestBoardListCards9111 = guestBoardList12.cards.create(title: 'There are 3 on this page; 4 total on the site', ord: 1)
-guestBoardListCards10111 = guestBoardList12.cards.create(title: 'Check this cards content to find the easter eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
+guestBoardListCards10111 = guestBoardList12.cards.create(title: 'Check this cards content to find the Easter Eggs', ord: 2, content: 'Click on the name of the board; Click on the owner of the board; Click on the email in the heading; Click Mellow-Yellow-Trellow to go back to board index page and click Boards')
 guestBoardListCards007 = guestBoardList110.cards.create(title: 'Click the gear icon, then delete this card')
 guestBoardListCards008 = guestBoardList110.cards.create(title: 'Then click the list settings icon and delete this list', ord: 1)
 
