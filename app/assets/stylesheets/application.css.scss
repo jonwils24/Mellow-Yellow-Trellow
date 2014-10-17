@@ -166,9 +166,11 @@ i {
   font-weight: bold;
 }
 
-
-body {
-  background-image: url('intro-bg.jpg');
+body { 
+  background: url('intro-bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
